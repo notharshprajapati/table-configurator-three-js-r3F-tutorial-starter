@@ -9,9 +9,12 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useConfigurator } from "/src/contexts/Configurator";
 export const Interface = () => {
   // const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor } =
   //   useConfigurator();
+  const { legs, setLegs, legsColor, setLegsColor, tableWidth, setTableWidth } =
+    useConfigurator();
   return (
     <Box
       sx={{
@@ -32,8 +35,8 @@ export const Interface = () => {
               }}
               min={50}
               max={200}
-              // value={tableWidth}
-              // onChange={(e) => setTableWidth(e.target.value)}
+              value={tableWidth}
+              onChange={(e) => setTableWidth(e.target.value)}
               valueLabelDisplay="auto"
             />
           </FormControl>
@@ -42,8 +45,8 @@ export const Interface = () => {
           <FormControl>
             <FormLabel>Legs Layout</FormLabel>
             <RadioGroup
-            // value={legs}
-            // onChange={(e) => setLegs(parseInt(e.target.value))}
+              value={legs}
+              onChange={(e) => setLegs(parseInt(e.target.value))}
             >
               <FormControlLabel
                 value={0}
@@ -59,8 +62,8 @@ export const Interface = () => {
           <FormControl>
             <FormLabel>Legs Color</FormLabel>
             <RadioGroup
-            // value={legsColor}
-            // onChange={(e) => setLegsColor(e.target.value)}
+              value={legsColor}
+              onChange={(e) => setLegsColor(e.target.value)}
             >
               <FormControlLabel
                 value={"#777777"}
