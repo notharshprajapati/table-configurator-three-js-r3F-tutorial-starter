@@ -1,21 +1,23 @@
 import { OrbitControls, Stage } from "@react-three/drei";
-import { Table } from "./Table";
-import { useConfigurator } from "../contexts/Configurator";
+import { Untitled } from "./Untitled";
+// import { Donut } from "./Donut";
+// import { Sphere } from "./Sphere";
 export const Experience = () => {
-  const { legs } = useConfigurator();
   return (
     <>
       <Stage
         intensity={1.5}
         shadows={{
           type: "accumulative",
-          color: "#d9afd9",
+          color: "#fff",
           colorBlend: 2,
           opacity: 2,
         }}
         adjustCamera={2}
       >
-        <Table />
+        <Untitled />
+        {/* <Donut /> */}
+        {/* <Sphere /> */}
       </Stage>
       <OrbitControls
         makeDefault
